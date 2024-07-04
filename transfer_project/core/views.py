@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import  login , logout
 from .models import *
@@ -37,7 +38,7 @@ def index(request):
     return render(request, 'index.html', {'form': form, 'choferes': choferes_disponibles_count})
 
 
-
+@staff_member_required  
 def chofer_register(request):
     if request.method == 'POST':
         form = ChoferSignUpForm(request.POST)
@@ -49,6 +50,7 @@ def chofer_register(request):
         form = ChoferSignUpForm()
     return render(request, 'registration/chofer_register.html', {'form': form})
 
+@login_required
 def delete(request, id):
     
     ticket = get_object_or_404(Ticket, id=id)   
@@ -63,6 +65,7 @@ def delete(request, id):
         
     return render(request, 'delete.html', {'ticket': ticket})  
 
+@login_required
 def finalizar(request, id):
     
     ticket = get_object_or_404(Ticket, id=id)   
