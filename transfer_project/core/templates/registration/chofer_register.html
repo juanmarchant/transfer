@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Registrar Usuario</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    
+       
+    
+    </head>
+    
+    <body class='bg-dark'>
+        
+    <div class="container-fluid ">
+        <div class="row  d-flex justify-content-center align-items-center vh-100">
+            <div class="col-5 bg-light rounded p-3">
+
+                <h2>Registrar chofer</h2>
+                <hr>
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    {{form.errors}}
+                    <div class="form-group">
+                        <label class='form-label' for="">{{form.username.label}}: </label><br>
+                        {{form.username}}
+                    </div>
+                    
+
+                    <div class="form-group">
+                      <label class='form-label'  for="">{{form.rut.label}}: </label><br>
+                      {{form.rut}}
+                    </div>
+
+                    <div class="form-group">
+                        <label class='form-label'  for="">{{form.nombre.label}}: </label><br>
+                        {{form.nombre}}
+                    </div>
+
+                    <div class="form-group">
+                        <label class='form-label'  for="">{{form.apellido.label}}: </label><br>
+                        {{form.apellido}}
+                    </div>
+
+                    <div class="form-group">
+                        <label class='form-label' for="">{{form.patente.label}}: </label><br>
+                        {{form.patente}}
+                    </div>
+
+                    <div class="form-group">
+                      <label class='form-label' for="">{{form.posicion.label}}: </label><br>
+                      {{form.posicion}}
+                  </div>
+
+                    <div class="form-group">
+                        <label class='form-label' for="">Password: </label><br>
+                        {{form.password1}}
+                    </div>
+
+                    <div class="form-group">
+                        <label class='form-label'  for="">Confirm Password: </label><br>
+                        {{form.password2}}
+                    </div>
+                  
+                    
+                    <div class=" text-center">
+                        <input type="submit" value="Registrar" class="btn btn-success mx-auto mt-3" >
+                    </div>
+                    
+                </form>
+                    
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
